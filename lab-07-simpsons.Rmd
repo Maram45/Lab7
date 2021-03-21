@@ -26,39 +26,47 @@ library(mosaicData)
 ```
     
 Your answer:
-
+Observational , because we just watching the people and write the notes also we didn't involving in any situation or controlling any variables .
 2.  
 ```{r observations}
-
+nrow(Whickham)
 ```
 
 Your answer;
-
+1314 , represent recorded participants' age , smoking status at baseline 
 3.  
 
 ```{r number_variables}
-
+names(Whickham)
 ```
 
 Your answer:  
-
+3 , age (Numerical) , smoker and outcome are categorical 
 ```{r var_type}
-
+unique(Whickham$outcome)
+unique(Whickham$smoker)
+unique(Whickham$age)
 ```
 
-Your answer: 
+Your answer: using the 'unique()' function on the 3 variables we cloud see that "outcome" only takes alive or dead value, which makes it categorical non-ordinal.
+"smoker" only takes yes or no, which also makes it categorical non-ordinal.
+age is numerical continous data.
+continous one of the best ways to visualise categorical data is through the use ofbar charts.
 
 ```{r plot_outcome}
-
+ggplot(Whickham, aes(x = outcome)) +
+  geom_bar()
 ```
 
 
 ```{r plot_smoker}
-
+ggplot(Whickham, aes(x = smoker)) +
+  geom_bar()
 ```
 
 ```{r plot_age}
-
+ggplot(Whickham, aes(x = age)) +
+  geom_bar()
 ```
 
 
